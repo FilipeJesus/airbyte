@@ -278,6 +278,9 @@ importers:
       del:
         specifier: 6.1.1
         version: 6.1.1
+      docusaurus-plugin-dotenv:
+        specifier: ^1.0.1
+        version: 1.0.1(webpack@5.89.0)
       docusaurus-plugin-hubspot:
         specifier: ^1.0.0
         version: 1.0.0
@@ -362,6 +365,9 @@ importers:
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.0.0
+      use-debounce:
+        specifier: ^10.0.3
+        version: 10.0.3(react@18.2.0)
       webpack-dev-server:
         specifier: 4.9.2
         version: 4.9.2(webpack@5.89.0)
@@ -2796,6 +2802,9 @@ packages:
     resolution: {integrity: sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw==}
     engines: {node: '>=6'}
 
+  docusaurus-plugin-dotenv@1.0.1:
+    resolution: {integrity: sha512-qKlWuBd6UoyB0d5ExH9waYGPoy1SnWgV8s8VLg12ydcfxquazXJngV0N5VAX/HuFiZmsPD3L4TYUKxdHWJTeEw==}
+
   docusaurus-plugin-hubspot@1.0.0:
     resolution: {integrity: sha512-qeNRlI336M6mcANGrEDxMt7B+GWvWd+yXOpT6uquQLX0b2cDHncDj0+rbuUaJUNQnKQz1st7sKgJQ0P55736Ug==}
     deprecated: docusaurus-plugin-hubspot is now available at @stackql/docusaurus-plugin-hubspot
@@ -2837,6 +2846,19 @@ packages:
 
   dot-prop@6.0.1:
     resolution: {integrity: sha512-tE7ztYzXHIeyvc7N+hR3oi7FIbf/NIjVP9hmAt3yMXzrQ072/fpjGLx2GxNxGxUl5V73MEqYzioOMoVhGMJ5cA==}
+    engines: {node: '>=10'}
+
+  dotenv-defaults@2.0.2:
+    resolution: {integrity: sha512-iOIzovWfsUHU91L5i8bJce3NYK5JXeAwH50Jh6+ARUdLiiGlYWfGw6UkzsYqaXZH/hjE/eCd/PlfM/qqyK0AMg==}
+
+  dotenv-webpack@7.0.2:
+    resolution: {integrity: sha512-RY+/5uM/XY4bGtih9f9ic8hlrUDxVcZZBPWlnX/aHhaKxcVVX9SH/5VH7CSmvVo9GL6PKvQOA0X1bc552rnatQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      webpack: ^4 || ^5
+
+  dotenv@8.6.0:
+    resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
 
   duplexer@0.1.2:
@@ -5635,6 +5657,12 @@ packages:
     peerDependenciesMeta:
       file-loader:
         optional: true
+
+  use-debounce@10.0.3:
+    resolution: {integrity: sha512-DxQSI9ZKso689WM1mjgGU3ozcxU1TJElBJ3X6S4SMzMNcm2lVH0AHmyXB+K7ewjz2BSUKJTDqTcwtSMRfB89dg==}
+    engines: {node: '>= 16.0.0'}
+    peerDependencies:
+      react: '*'
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -9195,6 +9223,12 @@ snapshots:
     dependencies:
       '@leichtgewicht/ip-codec': 2.0.4
 
+  docusaurus-plugin-dotenv@1.0.1(webpack@5.89.0):
+    dependencies:
+      dotenv-webpack: 7.0.2(webpack@5.89.0)
+    transitivePeerDependencies:
+      - webpack
+
   docusaurus-plugin-hubspot@1.0.0: {}
 
   docusaurus-plugin-segment@1.0.3:
@@ -9249,6 +9283,17 @@ snapshots:
   dot-prop@6.0.1:
     dependencies:
       is-obj: 2.0.0
+
+  dotenv-defaults@2.0.2:
+    dependencies:
+      dotenv: 8.6.0
+
+  dotenv-webpack@7.0.2(webpack@5.89.0):
+    dependencies:
+      dotenv-defaults: 2.0.2
+      webpack: 5.89.0
+
+  dotenv@8.6.0: {}
 
   duplexer@0.1.2: {}
 
@@ -12596,6 +12641,10 @@ snapshots:
       webpack: 5.89.0
     optionalDependencies:
       file-loader: 6.2.0(webpack@5.89.0)
+
+  use-debounce@10.0.3(react@18.2.0):
+    dependencies:
+      react: 18.2.0
 
   util-deprecate@1.0.2: {}
 

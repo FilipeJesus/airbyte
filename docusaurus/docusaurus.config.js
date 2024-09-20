@@ -51,6 +51,7 @@ const config = {
   ],
 
   plugins: [
+    "docusaurus-plugin-dotenv",
     [
       "@docusaurus/plugin-client-redirects",
       {
