@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
+require("dotenv").config();
 const yaml = require("js-yaml");
 const fs = require("node:fs");
 const path = require("node:path");
@@ -51,7 +51,6 @@ const config = {
   ],
 
   plugins: [
-    "docusaurus-plugin-dotenv",
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -79,7 +78,10 @@ const config = {
       },
     }),
   ],
-
+  customFields: {
+    requestErdApiUrl: process.env.REQUEST_ERD_API_URL,
+    requestErdApiKey: process.env.REQUEST_ERD_API_KEY,
+  },
   clientModules: [
     require.resolve("./src/scripts/cloudStatus.js"),
     require.resolve("./src/scripts/download-abctl-buttons.js"),

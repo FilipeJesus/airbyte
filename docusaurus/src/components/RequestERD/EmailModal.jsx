@@ -1,14 +1,10 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import styles from "./EmailModal.module.css";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cn from "classnames";
 import { useDebouncedCallback } from "use-debounce";
-
-const API_URL = process.env.REQUEST_ERD_API_URL;
-console.log('API_URL' ,API_URL);
-const API_KEY = process.env.REQUEST_ERD_API_KEY;
-console.log('API_KEY' ,API_KEY);
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 const CloseButton = ({ onClose }) => {
   return (
@@ -87,6 +83,12 @@ const ModalBody = ({ status, onSubmit }) => {
 
 export const EmailModal = ({ isOpen, onClose, sourceInfo }) => {
   const [status, setStatus] = useState("");
+  const {
+    siteConfig: {
+      customFields: { requestErdApiUrl, requestErdApiKey },
+    },
+  } = useDocusaurusContext();
+ 
 
   if (!isOpen) return null;
 
@@ -94,10 +96,10 @@ export const EmailModal = ({ isOpen, onClose, sourceInfo }) => {
     setStatus("loading");
 
     try {
-      const response = await fetch(`${API_URL}/api/request-erd`, {
+      const response = await fetch(`${requestErdApiUrl}/api/request-erd`, {
         method: "POST",
         headers: {
-          "x-api-key": API_KEY,
+          "x-api-key": requestErdApiKey,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

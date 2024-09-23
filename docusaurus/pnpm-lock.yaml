@@ -278,15 +278,15 @@ importers:
       del:
         specifier: 6.1.1
         version: 6.1.1
-      docusaurus-plugin-dotenv:
-        specifier: ^1.0.1
-        version: 1.0.1(webpack@5.89.0)
       docusaurus-plugin-hubspot:
         specifier: ^1.0.0
         version: 1.0.0
       docusaurus-plugin-segment:
         specifier: ^1.0.3
         version: 1.0.3
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       html-loader:
         specifier: ^4.2.0
         version: 4.2.0(webpack@5.89.0)
@@ -2802,9 +2802,6 @@ packages:
     resolution: {integrity: sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw==}
     engines: {node: '>=6'}
 
-  docusaurus-plugin-dotenv@1.0.1:
-    resolution: {integrity: sha512-qKlWuBd6UoyB0d5ExH9waYGPoy1SnWgV8s8VLg12ydcfxquazXJngV0N5VAX/HuFiZmsPD3L4TYUKxdHWJTeEw==}
-
   docusaurus-plugin-hubspot@1.0.0:
     resolution: {integrity: sha512-qeNRlI336M6mcANGrEDxMt7B+GWvWd+yXOpT6uquQLX0b2cDHncDj0+rbuUaJUNQnKQz1st7sKgJQ0P55736Ug==}
     deprecated: docusaurus-plugin-hubspot is now available at @stackql/docusaurus-plugin-hubspot
@@ -2848,18 +2845,9 @@ packages:
     resolution: {integrity: sha512-tE7ztYzXHIeyvc7N+hR3oi7FIbf/NIjVP9hmAt3yMXzrQ072/fpjGLx2GxNxGxUl5V73MEqYzioOMoVhGMJ5cA==}
     engines: {node: '>=10'}
 
-  dotenv-defaults@2.0.2:
-    resolution: {integrity: sha512-iOIzovWfsUHU91L5i8bJce3NYK5JXeAwH50Jh6+ARUdLiiGlYWfGw6UkzsYqaXZH/hjE/eCd/PlfM/qqyK0AMg==}
-
-  dotenv-webpack@7.0.2:
-    resolution: {integrity: sha512-RY+/5uM/XY4bGtih9f9ic8hlrUDxVcZZBPWlnX/aHhaKxcVVX9SH/5VH7CSmvVo9GL6PKvQOA0X1bc552rnatQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      webpack: ^4 || ^5
-
-  dotenv@8.6.0:
-    resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
-    engines: {node: '>=10'}
+  dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
 
   duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
@@ -9223,12 +9211,6 @@ snapshots:
     dependencies:
       '@leichtgewicht/ip-codec': 2.0.4
 
-  docusaurus-plugin-dotenv@1.0.1(webpack@5.89.0):
-    dependencies:
-      dotenv-webpack: 7.0.2(webpack@5.89.0)
-    transitivePeerDependencies:
-      - webpack
-
   docusaurus-plugin-hubspot@1.0.0: {}
 
   docusaurus-plugin-segment@1.0.3:
@@ -9284,16 +9266,7 @@ snapshots:
     dependencies:
       is-obj: 2.0.0
 
-  dotenv-defaults@2.0.2:
-    dependencies:
-      dotenv: 8.6.0
-
-  dotenv-webpack@7.0.2(webpack@5.89.0):
-    dependencies:
-      dotenv-defaults: 2.0.2
-      webpack: 5.89.0
-
-  dotenv@8.6.0: {}
+  dotenv@16.4.5: {}
 
   duplexer@0.1.2: {}
 
